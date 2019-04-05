@@ -1,0 +1,50 @@
+{
+  "name": "@morlz/adonis-typescript-starter",
+  "version": "4.1.0",
+  "adonis-version": "4.1.0",
+  "description": "The fullstack application boilerplate for Adonisjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "test": "node ace test",
+    "copy": "COPY \"./package.json\" \"./dist/package.json\" && COPY \".env\" \"./dist/.env\"",
+    "debug": "npm run build && npm run copy && concurrently --kill-others \"npm run watch\" \"npm run demon\"",
+    "demon": "nodemon --inspect --watch app --harmony dist/server.js",
+    "watch": "tsc -w"
+  },
+  "keywords": [
+    "adonisjs",
+    "adonis-app"
+  ],
+  "author": "",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@adonisjs/ace": "^5.0.8",
+    "@adonisjs/auth": "^3.0.7",
+    "@adonisjs/bodyparser": "^2.0.3",
+    "@adonisjs/cors": "^1.0.6",
+    "@adonisjs/fold": "^4.0.9",
+    "@adonisjs/framework": "^5.0.12",
+    "@adonisjs/ignitor": "^2.0.6",
+    "@adonisjs/lucid": "^5.0.4",
+    "@adonisjs/redis": "^2.0.7",
+    "@adonisjs/session": "^1.0.28",
+    "@adonisjs/shield": "^1.0.6",
+    "@adonisjs/validator": "^5.0.3",
+    "ioredis": "^3.2.2"
+  },
+  "devDependencies": {
+    "@types/debug": "^0.0.30",
+    "@types/ioredis": "^3.2.11",
+    "@types/knex": "^0.14.15",
+    "@types/lodash": "^4.14.110",
+    "@types/node": "^10.5.1",
+    "nodemon": "^1.18.10",
+    "typescript": "^3.4.1"
+  },
+  "autoload": {
+    "App": "./app"
+  }
+}
